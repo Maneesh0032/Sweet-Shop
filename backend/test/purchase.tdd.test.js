@@ -17,9 +17,10 @@ beforeAll(async () => {
   token = login.body.token;
 });
 
-afterAll(() => {
-  db.close();
+afterAll(async () => {
+  await db.close();
 });
+
 
 describe('TDD: Purchase Sweet', () => {
   test('should decrease sweet quantity by 1 after purchase', async () => {
